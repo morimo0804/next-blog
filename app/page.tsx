@@ -2,17 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 
+import NewsList from "./_components/NewsList";
 import ButtonLink from "./_components/ButtonLink";
-
-type News = {
-  id: string;
-  title: string;
-  category: {
-    name: string;
-  };
-  publishedAt: string;
-  createdAt: string;
-};
+import { News } from "@/app/_libs/microcms";
 
 const data: {
   contents: News[];
@@ -62,18 +54,7 @@ export default function Home() {
         <h2>
           <Image src="/blog.svg" alt="ブログ" width={258} height={71} />
         </h2>
-        <ul>
-          {slicData.map((article) => (
-            <li key={article.id} className={styles.post}>
-              <Image src="/no-image.png" alt="" width={420} height={270} />
-              <dl className="mt-3 space-y-1">
-                <dt className="text-lg font-bold">{article.title}</dt>
-                <dd className="text-sm">{article.category.name}</dd>
-                <dd className="text-sm">{article.publishedAt}</dd>
-              </dl>
-            </li>
-          ))}
-        </ul>
+        <NewsList news={slicData} />
         <ButtonLink href="/news">記事一覧へ</ButtonLink>
       </section>
     </main>
