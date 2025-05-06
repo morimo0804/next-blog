@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="py-10 pb-5 text-right bg-[#cb5a44]">
-      <div className="max-w-[1366px] w-[84.61%] mx-auto">
+      <div className="max-w-[1366px] w-[90%] mx-auto">
         <div className="md:flex md:justify-between md:items-start">
           <Image
             src="/footerIcon.svg"
@@ -16,28 +16,28 @@ export default function Footer() {
           <nav>
             <ul className="hidden md:flex md:gap-[70px] text-white font-bold text-[30px] transition-all">
               <li>
-                <a
+                <Link
                   href="#area-1"
                   className="text-white text-[25px] font-bold hover:scale-110 transition-transform block"
                 >
                   blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#area-2"
                   className="text-white text-[25px] font-bold hover:scale-110 transition-transform block"
                 >
                   category
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#area-3"
                   className="text-white text-[25px] font-bold hover:scale-110 transition-transform block"
                 >
                   profile
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>

@@ -9,7 +9,7 @@ export default function Header() {
 
   return (
     <header className="py-[17px] bg-[#cb5a44]">
-      <div className="flex justify-between items-center max-w-[1366px] w-[84.61%] mx-auto">
+      <div className="flex justify-between items-center max-w-[1366px] w-[90%] mx-auto">
         <Link href="/">
           <Image
             src="/headerIcon.svg"
@@ -33,43 +33,31 @@ export default function Header() {
           <div className="flex items-center justify-center h-full">
             <ul className="text-center space-y-6">
               <li>
-                <a
+                <Link
                   href="#area-1"
+                  onClick={() => setIsOpen(false)}
                   className="text-white text-[25px] font-bold hover:scale-110 transition-transform block px-[70px]"
                 >
                   blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#area-2"
+                  onClick={() => setIsOpen(false)}
                   className="text-white text-[25px] font-bold hover:scale-110 transition-transform block px-[70px]"
                 >
                   category
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#area-3"
+                  onClick={() => setIsOpen(false)}
                   className="text-white text-[25px] font-bold hover:scale-110 transition-transform block px-[70px]"
                 >
                   profile
-                </a>
-              </li>
-              <li>
-                <form className="mt-8">
-                  <input
-                    type="text"
-                    placeholder="検索..."
-                    className="p-2 border rounded w-full max-w-[300px]"
-                  />
-                  <button
-                    type="submit"
-                    className="mt-2 bg-white text-[#cb5a44] px-4 py-1 rounded font-bold cursor-pointer"
-                  >
-                    検索
-                  </button>
-                </form>
+                </Link>
               </li>
             </ul>
           </div>
