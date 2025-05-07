@@ -2,47 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 
+import { getNewsList } from "./_libs/microcms";
+import { TOP_NEWS_LIMIT } from "./_constants";
 import ButtonLink from "./_components/ButtonLink";
 import NewsList from "./_components/NewsList";
 import LoopBooks from "./_components/LoopBooks";
-import { News } from "@/app/_libs/microcms";
 
-const data: {
-  contents: News[];
-} = {
-  contents: [
-    {
-      id: "1",
-      title: "地元紹介",
-      category: {
-        name: "学校",
-      },
-      publishedAt: "2025/05/04",
-      createdAt: "2025/05/04",
-    },
-    {
-      id: "2",
-      title: "地元紹介",
-      category: {
-        name: "学校",
-      },
-      publishedAt: "2025/05/04",
-      createdAt: "2025/05/04",
-    },
-    {
-      id: "3",
-      title: "地元紹介",
-      category: {
-        name: "学校",
-      },
-      publishedAt: "2025/05/04",
-      createdAt: "2025/05/04",
-    },
-  ],
-};
-
-export default function Home() {
-  const slicData = data.contents.slice(0, 6);
+export default async function Home() {
+  const data = await getNewsList({
+    limit: TOP_NEWS_LIMIT,
+  });
 
   return (
     <main>
@@ -78,11 +47,52 @@ export default function Home() {
         id="area-1"
         className={`${styles.news} max-w-[1100px] w-[90%] mx-auto`}
       >
-        <h2>
-          <Image src="/blog.svg" alt="ブログ" width={258} height={71} />
+        <h2 className="text-center mb-16">
+          <Image
+            src="/blog.svg"
+            alt="ブログ"
+            width={300}
+            height={0}
+            className="mx-auto"
+          />
         </h2>
-        <NewsList news={slicData} />
+        <NewsList news={data.contents} />
         <ButtonLink href="/news">記事一覧へ</ButtonLink>
+      </section>
+      <section
+        id="area-3"
+        className={`${styles.profile} max-w-[1100px] w-[90%] mx-auto`}
+      >
+        <h2 className="text-center mb-8">
+          <Image
+            src="/profile.svg"
+            alt="プロフィール"
+            width={300}
+            height={0}
+            className="mx-auto"
+          />
+        </h2>
+        <div className="bg-[#cae3ea] border-[10px] border-double border-black p-12 md:flex md:items-center md:justify-center">
+          <Image
+            src="/iconImage@3.png"
+            alt=""
+            width={222}
+            height={222}
+            className="w-[180px] md:w-[222px] md:mr-[100px] mx-auto md:mx-0"
+          />
+          <ul className="mt-[35px] md:mt-0 text-center md:text-left">
+            <li className="text-[20px] font-bold mb-[15px]">森茂 勇斗</li>
+            <li>2005年8月4日生まれ</li>
+            <li className="inline-block mt-[30px] mb-[40px] text-left">
+              動物が好きで犬を飼っています。
+              <br />
+              Webデザイン学科でWebサイト制作の勉強を頑張っています。
+            </li>
+            <li>
+              <ButtonLink href="/contact">お問い合わせ</ButtonLink>
+            </li>
+          </ul>
+        </div>
       </section>
       <LoopBooks />
     </main>
