@@ -5,5 +5,5 @@ type Props = {
 };
 
 export default function Date({ date }: Props) {
-  return <dd className="text-sm">{formatDate(date)}</dd>;
+  return <>{formatDate(date)}</>;
 }

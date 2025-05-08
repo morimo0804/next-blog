@@ -14,7 +14,7 @@ export default async function Page({ params }: Props) {
 
   return (
     <main>
-      <div>
+      <div className="max-w-[1000px] w-[90%] mx-auto">
         <Article data={data} />
         <ButtonLink href="/news">記事一覧へ</ButtonLink>
       </div>

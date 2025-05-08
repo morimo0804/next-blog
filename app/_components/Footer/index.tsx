@@ -18,7 +18,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#area-1"
-                  className="text-white text-[25px] font-bold hover:scale-110 transition-transform block"
+                  className="text-white text-[25px] font-bold hover:scale-110 transition-transform duration-300 block"
                 >
                   blog
                 </Link>
@@ -26,7 +26,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#area-2"
-                  className="text-white text-[25px] font-bold hover:scale-110 transition-transform block"
+                  className="text-white text-[25px] font-bold hover:scale-110 transition-transform duration-300 block"
                 >
                   category
                 </Link>
@@ -34,7 +34,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#area-3"
-                  className="text-white text-[25px] font-bold hover:scale-110 transition-transform block"
+                  className="text-white text-[25px] font-bold hover:scale-110 transition-transform duration-300 block"
                 >
                   profile
                 </Link>

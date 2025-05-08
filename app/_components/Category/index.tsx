@@ -5,5 +5,5 @@ type Props = {
 };
 
 export default function Category({ category }: Props) {
-  return <dd className="text-sm">{category.name}</dd>;
+  return <>{category.name}</>;
 }

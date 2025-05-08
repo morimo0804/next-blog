@@ -36,7 +36,7 @@ export default function Header() {
                 <Link
                   href="#area-1"
                   onClick={() => setIsOpen(false)}
-                  className="text-white text-[25px] font-bold hover:scale-110 transition-transform block px-[70px]"
+                  className="text-white text-[25px] font-bold hover:scale-110 transition-transform duration-300 block px-[70px]"
                 >
                   blog
                 </Link>
@@ -45,7 +45,7 @@ export default function Header() {
                 <Link
                   href="#area-2"
                   onClick={() => setIsOpen(false)}
-                  className="text-white text-[25px] font-bold hover:scale-110 transition-transform block px-[70px]"
+                  className="text-white text-[25px] font-bold hover:scale-110 transition-transform duration-300 block px-[70px]"
                 >
                   category
                 </Link>
@@ -54,7 +54,7 @@ export default function Header() {
                 <Link
                   href="#area-3"
                   onClick={() => setIsOpen(false)}
-                  className="text-white text-[25px] font-bold hover:scale-110 transition-transform block px-[70px]"
+                  className="text-white text-[25px] font-bold hover:scale-110 transition-transform duration-300 block px-[70px]"
                 >
                   profile
                 </Link>
