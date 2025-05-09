@@ -16,7 +16,7 @@ export default function NewsList({ news }: Props) {
   }
 
   return (
-    <div className="mb-20 grid gap-20 md:grid-cols-2">
+    <div className="mb-[80px] grid gap-20 md:grid-cols-2">
       {news.map((article) => (
         <article key={article.id} className={`${styles.post} space-y-4`}>
           <Link href={`/news/${article.id}`}>

@@ -12,10 +12,12 @@ type Props = {
 export default function Article({ data }: Props) {
   return (
     <main>
-      <section className="mt-20 mb-20">
-        <h1 className="text-3xl md:text-5xl font-bold mb-12">{data.title}</h1>
+      <section className="mt-20 mb-[80px]">
+        <h1 className="text-3xl md:text-5xl font-bold mb-[40px]">
+          {data.title}
+        </h1>
 
-        <ul className="flex items-center mb-5 font-bold">
+        <ul className="flex items-center mb-[20px] font-bold">
           <li className="p-2 border-[3px] border-black bg-white transition-transform duration-300 hover:scale-110 text-lg md:text-xl">
             <Link href={`/news/category/${data.category.id}`}>
               <Category category={data.category} />
@@ -27,7 +29,7 @@ export default function Article({ data }: Props) {
         </ul>
 
         {data.thumbnail ? (
-          <div className="mb-16">
+          <div className="mb-[60px]">
             <Image
               src={data.thumbnail.url}
               alt=""
@@ -37,7 +39,7 @@ export default function Article({ data }: Props) {
             />
           </div>
         ) : (
-          <div className="mb-16">
+          <div className="mb-[60px]">
             <Image
               src="/no-image.png"
               alt="no image"
@@ -49,7 +51,7 @@ export default function Article({ data }: Props) {
         )}
 
         <article
-          className={`${styles.content} border-b-4 border-black mb-20 prose max-w-none prose-img:mb-10 prose-p:mb-10 prose-a:underline prose-h2:mb-10 prose-h2:px-5 prose-h2:border-l-[10px] prose-h2:border-r-[10px] prose-h2:border-double prose-h2:border-black prose-h3:mb-10 prose-h3:px-5 prose-h3:border-l-[10px] prose-h3:border-double prose-h3:border-black`}
+          className={`${styles.content} border-b-4 border-black mb-[80px] prose max-w-none prose-img:mb-[40px] prose-p:mb-[40px] prose-a:underline`}
           dangerouslySetInnerHTML={{ __html: data.content }}
         />
       </section>
