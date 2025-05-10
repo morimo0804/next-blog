@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import SearchField from "../SearchField";
 import styles from "./index.module.css";
 
 export default function Header() {
@@ -58,6 +59,9 @@ export default function Header() {
                 >
                   profile
                 </Link>
+              </li>
+              <li>
+                <SearchField />
               </li>
             </ul>
           </div>
