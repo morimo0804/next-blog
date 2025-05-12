@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getCategoryDetail, getNewsList } from "@/app/_libs/microcms";
 import { notFound } from "next/navigation";
 import NewsList from "@/app/_components/NewsList";
@@ -21,18 +22,28 @@ export default async function Page({ params }: Props) {
 
   return (
     <main>
-      <div className="text-center">
-        <p className="mb-[50px] inline-block border-b-8 border-double border-black text-[20px] font-bold">
-          カテゴリー:
-          <Category category={category} />
-        </p>
+      <div className="max-w-[1000px] w-[90%] mx-auto">
+        <h2 className="text-center mt-[100px] mb-[60px]">
+          <Image
+            src="/blog.svg"
+            alt="ブログ"
+            width={300}
+            height={0}
+            className="mx-auto pl-[30px]"
+          />
+        </h2>
+        <div className="text-center">
+          <p className="mb-[50px] inline-block border-b-8 border-double border-black text-[20px] font-bold">
+            カテゴリー:
+            <Category category={category} />
+          </p>
+        </div>
+        <NewsList news={news} />
+        <Pagination
+          totalCount={totalCount}
+          basePath={`/news/category/${category.id}`}
+        />
       </div>
-      <NewsList news={news} />
-      <Pagination
-        totalCount={totalCount}
-        basePath={`/news/category/${category.id}`}
-      />
-      ;
     </main>
   );
 }

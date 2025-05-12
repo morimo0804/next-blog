@@ -2,17 +2,23 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
-function SearchFieldComponent() {
+type Props = {
+  onSubmit?: () => void;
+};
+
+function SearchFieldComponent({ onSubmit }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const q = e.currentTarget.elements.namedItem("q");
     if (q instanceof HTMLInputElement) {
       const params = new URLSearchParams();
       params.set("q", q.value.trim());
-      router.push(`/news/search?${params.toString()}`);
+
+      await router.push(`/news/search?${params.toString()}`);
+      if (onSubmit) onSubmit();
     }
   };
 
@@ -37,10 +43,10 @@ function SearchFieldComponent() {
   );
 }
 
-export default function SearchField() {
+export default function SearchField({ onSubmit }: Props) {
   return (
     <Suspense>
-      <SearchFieldComponent />
+      <SearchFieldComponent onSubmit={onSubmit} />
     </Suspense>
   );
 }

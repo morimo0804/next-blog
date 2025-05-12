@@ -17,7 +17,7 @@ export default function Footer() {
             <ul className="hidden md:flex md:gap-[70px] text-white font-bold text-[30px] transition-all">
               <li>
                 <Link
-                  href="#area-1"
+                  href="/news"
                   className="text-white text-[25px] font-bold hover:scale-110 transition-transform duration-300 block"
                 >
                   blog

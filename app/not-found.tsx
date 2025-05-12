@@ -5,7 +5,7 @@ import ButtonLink from "./_components/ButtonLink";
 
 export default function NotFound() {
   return (
-    <section className="bg-white py-10 md:py-[90px]">
+    <section className="bg-white py-10 py-[100px] md:py-[120px]">
       <div className="max-w-[1366px] w-[90%] mx-auto">
         <div
           className={`relative mb-[120px] border-[8px] md:border-[11px] border-[#c96659] p-5 text-center ${styles.outerBox}`}

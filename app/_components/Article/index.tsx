@@ -12,8 +12,8 @@ type Props = {
 export default function Article({ data }: Props) {
   return (
     <main>
-      <section className="mt-20 mb-[80px]">
-        <h1 className="text-3xl md:text-5xl font-bold mb-[40px]">
+      <section className="mt-[120px] mb-[80px]">
+        <h1 className="text-2xl md:text-4xl font-bold mb-[40px]">
           {data.title}
         </h1>
 

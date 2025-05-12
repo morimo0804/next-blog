@@ -35,7 +35,7 @@ export default function Header() {
             <ul className="text-center space-y-6">
               <li>
                 <Link
-                  href="#area-1"
+                  href="/news"
                   onClick={() => setIsOpen(false)}
                   className="text-white text-[25px] font-bold hover:scale-110 transition-transform duration-300 block px-[70px]"
                 >
@@ -61,7 +61,7 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <SearchField />
+                <SearchField onSubmit={() => setIsOpen(false)} />
               </li>
             </ul>
           </div>

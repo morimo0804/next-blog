@@ -6,6 +6,7 @@ import { getNewsList } from "./_libs/microcms";
 import { TOP_NEWS_LIMIT } from "./_constants";
 import ButtonLink from "./_components/ButtonLink";
 import NewsList from "./_components/NewsList";
+import CategoryList from "./_components/CategoryList";
 import LoopBooks from "./_components/LoopBooks";
 
 export default async function Home() {
@@ -44,32 +45,48 @@ export default async function Home() {
         </div>
       </section>
       <section
-        id="area-1"
-        className={`${styles.news} max-w-[1100px] w-[90%] mx-auto`}
+        className={`${styles.news} max-w-[1100px] w-[90%] mx-auto pb-[150px]`}
       >
-        <h2 className="text-center mb-16">
+        <h2 className="text-center mb-[60px]">
           <Image
             src="/blog.svg"
             alt="ブログ"
             width={300}
             height={0}
-            className="mx-auto"
+            className="mx-auto pl-[30px]"
           />
         </h2>
         <NewsList news={data.contents} />
-        <ButtonLink href="/news">記事一覧へ</ButtonLink>
+        <div className="text-center">
+          <ButtonLink href="/news">記事一覧へ</ButtonLink>
+        </div>
+      </section>
+      <section
+        id="area-2"
+        className="max-w-[1100px] w-[90%] mx-auto pb-[150px]"
+      >
+        <h2 className="text-center mb-[60px]">
+          <Image
+            src="/category.svg"
+            alt="カテゴリー"
+            width={300}
+            height={0}
+            className="mx-auto pl-[30px]"
+          />
+        </h2>
+        <CategoryList />
       </section>
       <section
         id="area-3"
-        className={`${styles.profile} max-w-[1100px] w-[90%] mx-auto`}
+        className={`${styles.profile} max-w-[1100px] w-[90%] mx-auto pb-[150px]`}
       >
-        <h2 className="text-center mb-8">
+        <h2 className="text-center mb-[60px]">
           <Image
             src="/profile.svg"
             alt="プロフィール"
             width={300}
             height={0}
-            className="mx-auto"
+            className="mx-auto pl-[30px]"
           />
         </h2>
         <div className="bg-[#cae3ea] border-[10px] border-double border-black p-12 md:flex md:items-center md:justify-center">
@@ -80,7 +97,7 @@ export default async function Home() {
             height={222}
             className="w-[180px] md:w-[222px] md:mr-[100px] mx-auto md:mx-0"
           />
-          <ul className="mt-[35px] md:mt-0 text-center md:text-left">
+          <ul className="mt-[35px] md:mt-0 text-center">
             <li className="text-[20px] font-bold mb-[15px]">森茂 勇斗</li>
             <li>2005年8月4日生まれ</li>
             <li className="inline-block mt-[30px] mb-[40px] text-left">
@@ -89,7 +106,9 @@ export default async function Home() {
               Webデザイン学科でWebサイト制作の勉強を頑張っています。
             </li>
             <li>
-              <ButtonLink href="/contact">お問い合わせ</ButtonLink>
+              <div className="text-center">
+                <ButtonLink href="/contact">お問い合わせ</ButtonLink>
+              </div>
             </li>
           </ul>
         </div>

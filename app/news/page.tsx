@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getNewsList } from "../_libs/microcms";
 import NewsList from "../_components/NewsList";
 import Pagination from "../_components/Pagination";
@@ -9,9 +10,18 @@ export default async function Page() {
   });
 
   return (
-    <>
+    <section className="max-w-[1000px] w-[90%] mx-auto">
+      <h2 className="text-center mt-[100px] mb-[60px]">
+        <Image
+          src="/blog.svg"
+          alt="ブログ"
+          width={300}
+          height={0}
+          className="mx-auto pl-[30px]"
+        />
+      </h2>
       <NewsList news={news} />
       <Pagination totalCount={totalCount} />
-    </>
+    </section>
   );
 }
