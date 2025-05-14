@@ -5,6 +5,7 @@ import NewsList from "@/app/_components/NewsList";
 import Pagination from "@/app/_components/Pagination";
 import Category from "@/app/_components/Category";
 import { NEWS_LIST_LIMIT } from "@/app/_constants";
+import LoopBooks from "@/app/_components/LoopBooks";
 
 type Props = {
   params: {
@@ -44,6 +45,7 @@ export default async function Page({ params }: Props) {
           basePath={`/news/category/${category.id}`}
         />
       </div>
+      <LoopBooks />
     </main>
   );
 }

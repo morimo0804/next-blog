@@ -44,7 +44,7 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="#area-2"
+                  href="/#area-1"
                   onClick={() => setIsOpen(false)}
                   className="text-white text-[25px] font-bold hover:scale-110 transition-transform duration-300 block px-[70px]"
                 >
@@ -53,7 +53,7 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="#area-3"
+                  href="/#area-2"
                   onClick={() => setIsOpen(false)}
                   className="text-white text-[25px] font-bold hover:scale-110 transition-transform duration-300 block px-[70px]"
                 >

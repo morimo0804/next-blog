@@ -4,6 +4,7 @@ import { getNewsDetail } from "@/app/_libs/microcms";
 import CategoryList from "@/app/_components/CategoryList";
 import Article from "@/app/_components/Article";
 import ButtonLink from "@/app/_components/ButtonLink";
+import LoopBooks from "@/app/_components/LoopBooks";
 
 type Props = {
   params: {
@@ -71,6 +72,7 @@ export default async function Page({ params }: Props) {
           </section>
         </aside>
       </div>
+      <LoopBooks />
     </main>
   );
 }

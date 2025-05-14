@@ -25,7 +25,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#area-2"
+                  href="/#area-1"
                   className="text-white text-[25px] font-bold hover:scale-110 transition-transform duration-300 block"
                 >
                   category
@@ -33,7 +33,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#area-3"
+                  href="/#area-2"
                   className="text-white text-[25px] font-bold hover:scale-110 transition-transform duration-300 block"
                 >
                   profile

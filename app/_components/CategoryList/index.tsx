@@ -27,9 +27,9 @@ export default async function CategoryList() {
 
   return (
     <div className="my-12 text-center">
-      <ul className="flex flex-wrap justify-center gap-4">
+      <ul>
         {categoriesWithCount.map(({ category, count }) => (
-          <li key={category.id}>
+          <li key={category.id} className="mb-[25px]">
             <Link href={`/news/category/${category.id}`}>
               <span className="inline-block font-bold text-lg  hover:scale-110 transition-transform duration-300">
                 {category.name}（{count}）

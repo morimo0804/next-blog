@@ -77,7 +77,7 @@ export default async function Home() {
         </div>
       </section>
       <section
-        id="area-2"
+        id="area-1"
         className="max-w-[1100px] w-[90%] mx-auto pb-[150px]"
       >
         <h2 className="text-center mb-[60px]">
@@ -92,7 +92,7 @@ export default async function Home() {
         <CategoryList />
       </section>
       <section
-        id="area-3"
+        id="area-2"
         className={`${styles.profile} max-w-[1100px] w-[90%] mx-auto pb-[150px]`}
       >
         <h2 className="text-center mb-[60px]">

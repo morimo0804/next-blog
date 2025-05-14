@@ -1,4 +1,5 @@
 import Image from "next/image";
+import LoopBooks from "@/app/_components/LoopBooks";
 
 export default function Page() {
   return (
@@ -19,6 +20,7 @@ export default function Page() {
           読み込んでいます…
         </iframe>
       </div>
+      <LoopBooks />
     </main>
   );
 }
