@@ -14,6 +14,7 @@ export type News = {
   content: string;
   thumbnail?: MicroCMSImage;
   category: Category;
+  pickup?: boolean;
 } & MicroCMSListContent;
 
 if (!process.env.MICROCMS_SERVISE_DOMAIN) {

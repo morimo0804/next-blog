@@ -1,0 +1,47 @@
+.sliderWrapper {
+  position: relative;
+}
+
+.sliderItem {
+  width: 100%;
+}
+
+.arrow {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border-top: 6px solid #ccc;
+  border-right: 6px solid #ccc;
+  cursor: pointer;
+}
+
+.prev {
+  left: 2.5%;
+  transform: rotate(-135deg);
+}
+
+.next {
+  right: 2.5%;
+  transform: rotate(45deg);
+}
+
+.dots {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  margin: 30px 0 0 0;
+}
+
+.dot {
+  color: transparent;
+  outline: none;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #ccc;
+  margin: 0 5px;
+}

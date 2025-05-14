@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 import { getNewsList } from "./_libs/microcms";
 import { TOP_NEWS_LIMIT } from "./_constants";
 import ButtonLink from "./_components/ButtonLink";
+import PickupSlider from "@/app/_components/PickupSlider";
 import NewsList from "./_components/NewsList";
 import CategoryList from "./_components/CategoryList";
 import LoopBooks from "./_components/LoopBooks";
@@ -13,6 +14,8 @@ export default async function Home() {
   const data = await getNewsList({
     limit: TOP_NEWS_LIMIT,
   });
+
+  const pickupPosts = data.contents.filter((post) => post.pickup).slice(0, 3);
 
   return (
     <main>
@@ -43,6 +46,18 @@ export default async function Home() {
             </div>
           </div>
         </div>
+      </section>
+      <section className="max-w-[900px] w-[90%] mx-auto pb-[150px]">
+        <h2 className="text-center mb-[60px]">
+          <Image
+            src="/pickup.svg"
+            alt="ピックアップ"
+            width={300}
+            height={0}
+            className="mx-auto pl-[30px]"
+          />
+        </h2>
+        <PickupSlider posts={pickupPosts} />
       </section>
       <section
         className={`${styles.news} max-w-[1100px] w-[90%] mx-auto pb-[150px]`}
