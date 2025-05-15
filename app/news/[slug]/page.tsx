@@ -1,4 +1,5 @@
-import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import { notFound, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { getNewsDetail } from "@/app/_libs/microcms";
 import CategoryList from "@/app/_components/CategoryList";
@@ -10,7 +11,33 @@ type Props = {
   params: {
     slug: string;
   };
+  searchParams: {
+    dk?: string;
+  };
 };
+
+export async function generateMetadata({
+  params,
+  searchParams,
+}: Props): Promise<Metadata> {
+  const data = await getNewsDetail(params.slug, {
+    draftKey: searchParams?.dk,
+  });
+
+  const stripHTML = (html: string) => html.replace(/<[^>]+>/g, "");
+  const plainText = stripHTML(data.content || "");
+  const description = plainText.slice(0, 100);
+
+  return {
+    title: data.title,
+    description,
+    openGraph: {
+      title: data.title,
+      description,
+      images: [data?.thumbnail?.url ?? ""],
+    },
+  };
+}
 
 export default async function Page({ params }: Props) {
   const data = await getNewsDetail(params.slug).catch(notFound);
