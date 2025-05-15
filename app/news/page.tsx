@@ -5,6 +5,8 @@ import Pagination from "../_components/Pagination";
 import { NEWS_LIST_LIMIT } from "../_constants";
 import LoopBooks from "@/app/_components/LoopBooks";
 
+export const revalidate = 60;
+
 export default async function Page() {
   const { contents: news, totalCount } = await getNewsList({
     limit: NEWS_LIST_LIMIT,

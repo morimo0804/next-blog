@@ -6,6 +6,8 @@ import Article from "@/app/_components/Article";
 import ButtonLink from "@/app/_components/ButtonLink";
 import LoopBooks from "@/app/_components/LoopBooks";
 
+export const revalidate = 60;
+
 type Props = {
   params: {
     slug: string;
