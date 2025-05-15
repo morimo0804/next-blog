@@ -4,6 +4,7 @@ import { getNewsList } from "@/app/_libs/microcms";
 import NewsList from "@/app/_components/NewsList";
 import Pagination from "@/app/_components/Pagination";
 import { NEWS_LIST_LIMIT } from "@/app/_constants";
+import LoopBooks from "@/app/_components/LoopBooks";
 
 type Props = {
   params: {
@@ -28,18 +29,21 @@ export default async function Page({ params }: Props) {
   }
 
   return (
-    <section className="max-w-[1000px] w-[90%] mx-auto">
-      <h2 className="text-center mt-[100px] mb-[60px]">
-        <Image
-          src="/blog.svg"
-          alt="ブログ"
-          width={300}
-          height={0}
-          className="mx-auto pl-[30px]"
-        />
-      </h2>
-      <NewsList news={news} />
-      <Pagination totalCount={totalCount} />
-    </section>
+    <main>
+      <section className="max-w-[1000px] w-[90%] mx-auto">
+        <h2 className="text-center mt-[100px] mb-[60px]">
+          <Image
+            src="/blog.svg"
+            alt="ブログ"
+            width={300}
+            height={0}
+            className="mx-auto pl-[30px]"
+          />
+        </h2>
+        <NewsList news={news} />
+        <Pagination totalCount={totalCount} />
+      </section>
+      <LoopBooks />
+    </main>
   );
 }

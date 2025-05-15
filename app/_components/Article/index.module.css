@@ -62,7 +62,7 @@
   word-break: break-word;
 }
 
-.content code {
+.content pre {
   margin-bottom: 40px;
   padding: 16px;
   border-radius: 8px;
@@ -70,7 +70,7 @@
   font-size: 14px;
   overflow-x: auto;
   line-height: 1.6;
-  color: #fff;
+  color: #e8e8e8;
   background-color: #1e1e1e;
 }
 
