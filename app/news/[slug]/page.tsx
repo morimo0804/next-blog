@@ -54,7 +54,7 @@ export default async function Page({ params }: Props) {
 
         <aside className="md:mt-[120px] mb-[120px] md:mb-0 md:w-1/3 space-y-[80px]">
           <section>
-            <h2 className="text-center mb-[30px]">
+            <h2 className="text-center mb-[60px]">
               <Image
                 src="/category.svg"
                 alt="カテゴリー"
@@ -66,7 +66,7 @@ export default async function Page({ params }: Props) {
             <CategoryList />
           </section>
           <section>
-            <h2 className="text-center mb-[30px]">
+            <h2 className="text-center mb-[60px]">
               <Image
                 src="/profile.svg"
                 alt="プロフィール"
